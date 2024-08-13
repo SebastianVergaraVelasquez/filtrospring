@@ -24,7 +24,7 @@ post: localhost:8080/health/customer
 
 put: localhost:8080/health/customer/123
 
-delete: localhost:8080/health/customer/123
+delete: localhost:8080/health/customer/1234
 
 
 
