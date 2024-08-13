@@ -12,7 +12,7 @@ import java.sql.Date;
 public class Customer {
 
     @Id
-    private int id;
+    private String id;
     private String name;
     private String lastname;
 
@@ -27,7 +27,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int id, String name, String lastname, City city, String email, Date birthdate, Double lon, Double lat) {
+    public Customer(String id, String name, String lastname, City city, String email, Date birthdate, Double lon, Double lat) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
@@ -38,11 +38,11 @@ public class Customer {
         this.lat = lat;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
