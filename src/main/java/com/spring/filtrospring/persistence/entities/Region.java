@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "regions")
 public class Region {
@@ -21,6 +23,7 @@ public class Region {
     private Country country;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "region")
+    @JsonIgnore
     private List<City> cities;
 
     public Region() {

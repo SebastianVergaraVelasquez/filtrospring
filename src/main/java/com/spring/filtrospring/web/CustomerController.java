@@ -21,7 +21,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Customer> findById(@PathVariable int id){
+    public Optional<Customer> findById(@PathVariable String id){
         return customerService.findById(id);
     }
 
@@ -31,12 +31,12 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}")
-    public Optional<Customer> update(@PathVariable int id, @RequestBody Customer customer){
+    public Optional<Customer> update(@PathVariable String id, @RequestBody Customer customer){
         return customerService.update(id,customer);
     }
 
     @DeleteMapping("/{id}")
-    public Customer delete(@PathVariable int id){
+    public Customer delete(@PathVariable String id){
         Optional<Customer> customerOpt = customerService.findById(id);
         customerService.delete(customerOpt.get());
         return customerOpt.get() ;

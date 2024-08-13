@@ -6,9 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface CustomerRepository extends CrudRepository<Customer, Integer> {
+public interface CustomerRepository extends CrudRepository<Customer, String> {
 
     @Query("SELECT c FROM Customer c JOIN FETCH c.city")
     List<Customer> findCustomerDetail();
 }
-    

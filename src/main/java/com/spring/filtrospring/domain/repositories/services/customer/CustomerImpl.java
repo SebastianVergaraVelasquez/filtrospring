@@ -21,7 +21,7 @@ public class CustomerImpl implements ICustomer {
     }
 
     @Override
-    public Optional<Customer> findById(int id) {
+    public Optional<Customer> findById(String id) {
         return customerRepository.findById(id);
     }
 
