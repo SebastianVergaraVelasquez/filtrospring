@@ -2,6 +2,7 @@ package com.spring.filtrospring.web;
 
 import com.spring.filtrospring.domain.repositories.services.customer.ICustomer;
 import com.spring.filtrospring.persistence.entities.Customer;
+import com.spring.filtrospring.persistence.entities.CustomerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,13 +27,13 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer create(@RequestBody Customer customer){
-        return customerService.save(customer);
+    public Customer create(@RequestBody CustomerDTO customerDTO){
+        return customerService.save(customerDTO);
     }
 
     @PutMapping("/{id}")
-    public Optional<Customer> update(@PathVariable String id, @RequestBody Customer customer){
-        return customerService.update(id,customer);
+    public Optional<Customer> update(@PathVariable String id, @RequestBody CustomerDTO customerDTO){
+        return customerService.update(id,customerDTO);
     }
 
     @DeleteMapping("/{id}")
