@@ -10,10 +10,14 @@ import java.util.List;
 public class Region {
 
     @Id
+    @Column(name = "codereg")
     private String codeRegion;
+
+    @Column(name = "namereg")
     private String nameRegion;
 
     @ManyToOne
+    @JoinColumn(name = "codecountry")
     private Country country;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "region")

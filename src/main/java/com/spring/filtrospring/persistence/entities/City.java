@@ -14,6 +14,7 @@ public class City {
     private String nameCity;
 
     @ManyToOne
+    @JoinColumn(name = "coderegion")
     private Region region;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "city")
